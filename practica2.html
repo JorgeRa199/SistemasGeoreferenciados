@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objeto Navigator</title>
+    <style>
+        .boton{
+            background-color: black;
+            color: whitesmoke;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Objeto Navigator</h1>
+
+    <button class="boton" onclick="obtieneDatos()">Obtener datos del navegador</button>
+
+    <ul id="navegador">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    
+    <script>
+
+      var navegador = document.getElementById("navegador");
+      var datos = navegador.getElementsByTagName("li");
+
+      function obtieneDatos() {
+        datos[0].innerHTML = "Nombre del navegador es: "  + navigator.appCodeName;
+        datos[1].innerHTML = "La versión del navegador es: " + navigator.appVersion;
+        datos[2].innerHTML = "Estatus de internet: " + navigator.onLine;
+        datos[3].innerHTML = "Plataforma: " + navigator.platform;
+        datos[4].innerHTML = "cookiesEnabled is " + navigator.cookieEnabled;
+      }
+
+    </script>
+    
+</body>
+</html>
