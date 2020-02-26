@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API estatica de Google</title>
+    <style>
+        .mapa{
+            background-color: #ffffff;
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <button onclick="obtieneUbicacion()" class="btn btn-dark">Obtener ubicacion</button>
+    <div id="mapa" ></div>
+
+    <script>
+        function obtieneUbicacion(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(muestraPosicion)
+            } else {
+                alert("No")
+            }
+        }
+
+        function muestraPosicion(posicion){
+            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude;
+            var imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center=" + coordenadas + "&zoom=17&size=1200x600&sensor=false&key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA";
+            document.getElementById("mapa").innerHTML = "<img src='"+imageUrl+"'>";
+        }
+    </script>
+</body>
+</html>
