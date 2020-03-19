@@ -41,7 +41,7 @@ function iniciaMapa() {
     if (navigator.geolocation) {
         setInterval(function(){
             moverPosicion(marker);
-        },10000);
+        },5000);
     }
 }
 
@@ -54,13 +54,13 @@ function moverPosicion(marker) {
         marker.setPosition(new google.maps.LatLng(posicion.coords.latitude, posicion.coords.longitude));
         map.panTo(new google.maps.LatLng(posicion.coords.latitude, posicion.coords.longitude));
         map.setCenter(pos);
-        console.log(pos.lat, pos.lng);
+        console.log(pos.lat, pos.lng, "guardado en FireBase");
 
-        /* db.collection("Ubucaciones").add(
+        db.collection("Ubucaciones").add(
             {
               coordenadas : new firebase.firestore.GeoPoint(pos.lat, pos.lng)
             }
-        ); */
+        ); 
     });
 
     
