@@ -41,7 +41,7 @@ function iniciaMapa() {
     if (navigator.geolocation) {
         setInterval(function(){
             moverPosicion(marker);
-        },3000);
+        },10000);
     }
 }
 
