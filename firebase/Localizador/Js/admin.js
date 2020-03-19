@@ -91,3 +91,20 @@ const geopointsLista = document.querySelector("#lista");
     var marcador = new google.maps.Marker({ position: coords, map: map });
   }
 
+  function iniciaMapa() {
+    var coordenadas = {
+        lat: 21.152639,
+        lng: -101.711598
+    }
+
+    var map = new google.maps.Map(
+        document.getElementById('mapa'),
+        {
+            center: coordenadas,
+            zoom: 15
+        }
+    );
+
+    var marcador2 = new google.maps.Marker({ position: coordenadas, map: map });
+}
+
