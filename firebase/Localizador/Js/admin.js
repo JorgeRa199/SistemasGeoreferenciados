@@ -51,8 +51,8 @@ const geopointsLista = document.querySelector("#lista");
                 var longMarker =(JSON.stringify(doc.data().coordenadas.F)); 
                 
                 var coordenadasMarcador = {
-                  lat: latMarker,
-                  lng: longMarker
+                  lat: parseFloat(latMarker),
+                  lng: parseFloat(longMarker)
                 } 
 
                 colocarMarcador(coordenadasMarcador);
