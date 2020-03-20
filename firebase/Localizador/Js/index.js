@@ -61,7 +61,9 @@ function moverPosicion(marker) {
               coordenadas : new firebase.firestore.GeoPoint(pos.lat, pos.lng)
             }
         ); 
-    });
+    });    
+}
 
-    
+function autenticarAdmin(){
+    window.location.href="./admin.html";
 }
