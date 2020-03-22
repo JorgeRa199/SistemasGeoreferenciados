@@ -24,25 +24,41 @@ const geopointsLista = document.querySelector("#lista");
         let li = document.createElement("li");
         let coords = document.createElement("span");
 
-        //Crear boton personalizado con icono
+        //Crear boton personalizado con icono localizacion
         let localizacion = document.createElement("button");
         let icon = document.createElement("i");
         localizacion.className = "btn btn-info";
         icon.className = "fa fa-map-marker";
         localizacion.appendChild(icon);
+
+         //Crear boton personalizado con icono borrar
+         let borrar = document.createElement("button");
+         let icon2 = document.createElement("i");
+         borrar.className = "btn btn-info";
+         icon2.className = "fa fa-trash";
+         borrar.appendChild(icon2);
         
         var Latitutd = JSON.stringify(doc.data().coordenadas.O);
         var Longitud = JSON.stringify(doc.data().coordenadas.F);
         coords.textContent = Latitutd + "," + Longitud;
        
+        li.className = "list-group-item";
         li.setAttribute("id", doc.id);
 
         li.appendChild(localizacion);
+        li.appendChild(borrar);
         li.appendChild(coords);
         
 
         geopointsLista.appendChild(li);
 
+        //EVENTO PARA BORRAR DE FIREBASE UN DATO
+        borrar.addEventListener("click", (e) => {
+          let id = e.target.parentElement.getAttribute("id");
+          db.collection("Ubucaciones").doc(id).delete();
+        });
+
+        //EVENTO PARA COLOCAR MARCADOR EN MAPA
         localizacion.addEventListener("click", (e) => {
             let id = e.target.parentElement.getAttribute("id");
             
