@@ -357,12 +357,13 @@ function iniciaMapa() {
     for (marcador of marcadores) {
         let marker = new google.maps.Marker({
             map: map,
+            icon: icono,
+            title: marcador.name,
             position: new google.maps.LatLng(
                 marcador.latitude,
                 marcador.longitude
-            ),
-            icon: icono,
-            title: marcador.name
+            )
+            
         });
     }
 }
