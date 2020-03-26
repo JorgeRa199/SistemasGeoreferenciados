@@ -333,6 +333,13 @@ function iniciaMapa() {
         }
     ],
         { name: 'Styled Map' });
+
+    var icono = {
+        url: "https://interbolivia.com/wp-content/uploads/2018/12/pulse.gif",
+        scaledSize: new google.maps.Size(50, 50),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(0, 0)
+    }
     const map = new google.maps.Map(
         document.getElementById("map"),
         propiedades, {
@@ -354,6 +361,7 @@ function iniciaMapa() {
                 marcador.latitude,
                 marcador.longitude
             ),
+            icon: icono,
             title: marcador.name
         });
     }
