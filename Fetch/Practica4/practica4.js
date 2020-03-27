@@ -335,7 +335,7 @@ function iniciaMapa() {
                 console.log(datos);
 
                 datos.forEach(marcador => {
-                    fetch("https://corona.lmao.ninja/countries", {mode: 'cors'}).then(function (
+                    fetch("https://corona.lmao.ninja/countries", {mode: 'no-cors'}).then(function (
                         respuesta
                     ) {
                         respuesta.json().then(function (datospaises) {
