@@ -336,7 +336,7 @@ function iniciaMapa() {
 
     var icono = {
         url: "https://interbolivia.com/wp-content/uploads/2018/12/pulse.gif",
-        scaledSize: new google.maps.Size(10, 10),
+        scaledSize: new google.maps.Size(15, 15),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(0, 0)
     }
